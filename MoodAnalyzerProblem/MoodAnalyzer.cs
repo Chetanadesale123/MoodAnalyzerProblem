@@ -15,5 +15,21 @@
             }
             return "happy";
         }
+        public string AnalyseMethodInvalidInput()
+        {
+            try
+            {
+                if (message.ToLower().Contains("null"))
+                {
+                    return "sad";
+                }
+                return "happy";
+
+            }
+            catch (Exception ex)
+            {
+                return "Happy";
+            }
+        }
     }
 }
