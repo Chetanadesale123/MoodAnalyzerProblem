@@ -23,7 +23,7 @@ namespace TestAnalyzeMood
         public void GivenNullInput_WhenTestAnalyzeMood_shouldReturnHappy()
         {
             MoodAnalyzer mood = new MoodAnalyzer("I am in a happy mood");
-            string result = mood.AnalyseMethod();
+            string result = mood.AnalyseMethodInvalidInput();
             Assert.AreEqual(result, "happy");
         }
     }
