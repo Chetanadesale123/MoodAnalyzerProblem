@@ -15,21 +15,38 @@
             }
             return "happy";
         }
+        
         public string AnalyseMethodInvalidInput()
         {
             try
             {
-                if (message.ToLower().Contains("null"))
+                if (message == null)
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NULL_MOOD, "Message is Null");
+                }
+                if (message.Equals(""))
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.EMPTY_MOOD, "Message is Empty");
+                }
+                if (message.ToLower().Contains("sad"))
                 {
                     return "sad";
                 }
-                return "happy";
+                else
+                {
+                    return "happy";
+                }
+
 
             }
-            catch (Exception ex)
+
+            catch (MoodAnalysisException ex)
             {
-                return "Happy";
+                return ex.Message;
             }
+
         }
+
     }
 }
+    

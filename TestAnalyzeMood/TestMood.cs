@@ -22,9 +22,28 @@ namespace TestAnalyzeMood
         [Test]
         public void GivenNullInput_WhenTestAnalyzeMood_shouldReturnHappy()
         {
-            MoodAnalyzer mood = new MoodAnalyzer("I am in a happy mood");
-            string result = mood.AnalyseMethodInvalidInput();
-            Assert.AreEqual(result, "happy");
+            try
+            {
+                MoodAnalyzer mood = new MoodAnalyzer(null);
+                string result = mood.AnalyseMethodInvalidInput();
+            }
+            catch (MoodAnalysisException ex)
+            {
+                Assert.AreEqual(ex.Message, "message is null");
+            }
+        }
+        [Test]
+        public void GivenEmptyInput_WhenTestAnalyzeMood_shouldReturnHappy()
+        {
+            try
+            {
+                MoodAnalyzer mood = new MoodAnalyzer("");
+                string result = mood.AnalyseMethodInvalidInput();
+            }
+            catch (MoodAnalysisException ex)
+            {
+                Assert.AreEqual(ex.Message, "message is Empty");
+            }
         }
     }
 }
