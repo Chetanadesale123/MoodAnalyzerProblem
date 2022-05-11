@@ -5,7 +5,7 @@
         string message;
         public MoodAnalyzer(string message)
         {
-            this.message = message; 
+            this.message = message;
         }
         public string AnalyseMethod()
         {
@@ -15,7 +15,6 @@
             }
             return "happy";
         }
-        
         public string AnalyseMethodInvalidInput()
         {
             try
@@ -36,17 +35,12 @@
                 {
                     return "happy";
                 }
-
-
             }
-
             catch (MoodAnalysisException ex)
             {
                 return ex.Message;
             }
-
         }
-
     }
 }
-    
+

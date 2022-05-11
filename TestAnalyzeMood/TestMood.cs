@@ -1,6 +1,5 @@
 using MoodAnalyzerProblem;
 using NUnit.Framework;
-
 namespace TestAnalyzeMood
 {
     public class TestMood
